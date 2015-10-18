@@ -1,0 +1,18 @@
+{% extends "base.html" %} {%block header %}
+<script type="text/javascript" src="{{static_url('js/index.js')}}"></script>
+{%end %} {%block content %}
+<div class="header col-md-12">
+	<h1>Web CTO Dashboard</h1>
+</div>
+
+<div class="row">
+	{% for image in list %}
+	<div class="col-md-3">
+		<img width="100%" src="{{static_url('image/upload/a.jpg')}}">
+
+	</div>
+	{%end%}
+</div>
+
+
+{%end %}

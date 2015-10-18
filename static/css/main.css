@@ -1,0 +1,13 @@
+body{
+	color :black;
+	background:url(../image/index/background.png) repeat-x;
+}
+
+h1{
+	text-align: center;
+	font-size: 24px;
+}
+
+footer{
+	text-align: center;
+}
