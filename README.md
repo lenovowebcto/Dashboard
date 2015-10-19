@@ -2,12 +2,12 @@
 
 ## develop environment
 ```
-python3.4  
-tornado  
-mysql  
-pymysql  
-SQLAlchemy  
-virtualenv  
+python3.4
+tornado
+mysql
+pymysql
+SQLAlchemy
+virtualenv
 ```
 ## catalog introduction
 ```
