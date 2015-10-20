@@ -1,0 +1,9 @@
+*.pyc
+.settings/
+.project
+.pydevproject
+.Rhistory
+view/*.pyc
+.*
+env/*
+test/
