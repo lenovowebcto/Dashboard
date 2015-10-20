@@ -7,19 +7,23 @@ from tornado.web import url
 from config import debug
 
 from view.index import IndexHandler
+from view.user import *
+from view.brand import *
 
 class Application(tornado.web.Application):
     def __init__(self):
         handlers = [
-                    (r'/',IndexHandler),
-
-                    ]
+            (r'/',IndexHandler),
+            (r'/user/login',LoginHandler),
+            (r'/user/regester',RegesterHandler),
+            (r'/brand/add', BrandHandler),
+        ]
         settings = dict(
-                        template_path = os.path.join(os.path.dirname(__file__),"templates"),
-                        static_path = os.path.join(os.path.dirname(__file__),"static"),
-                        websitetitle='Web CTO Dashboard',
-                        debug =debug,
-                        )
+            template_path = os.path.join(os.path.dirname(__file__),"templates"),
+            static_path = os.path.join(os.path.dirname(__file__),"static"),
+            websitetitle='Web CTO Dashboard',
+            debug =debug,
+        )
         tornado.web.Application.__init__(self, handlers, **settings)
 
 application = Application()
