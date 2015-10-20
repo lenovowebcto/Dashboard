@@ -6,4 +6,4 @@
 view/*.pyc
 .*
 env/*
-test/
+test/*
