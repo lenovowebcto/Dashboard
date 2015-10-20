@@ -39,7 +39,7 @@ class Project(BaseModel):
 
     id = Column(Integer, primary_key = True)
     name = Column(CHAR(64))
-    brand = Column(CHAR(64))
+    brand_id = Column(Integer, ForeignKey('brand.id'))
     sub_seris = Column(CHAR(64))
     cot_number = Column(CHAR(64))
     ad = Column(DATE)
@@ -87,7 +87,7 @@ class CTO_Activity(BaseModel):
 
     id = Column(Integer, primary_key = True)
     activities = Column(CHAR(64))
-    owner = Column(CHAR(64))
+    owner_id = Column(Integer, ForeignKey('user.id'))
     due_date = Column(DATE)
     start_date = Column(DATE)
     actual_comp_date = Column(DATE)
@@ -97,7 +97,7 @@ class LOIS_Activity(BaseModel):
 
     id = Column(Integer, primary_key = True)
     activities = Column(CHAR(64))
-    owner = Column(CHAR(64))
+    owner_id = Column(Integer, ForeignKey('user.id'))
     due_date = Column(DATE)
     start_date = Column(DATE)
     actual_comp_date = Column(DATE)
@@ -107,7 +107,7 @@ class IAL_Activity(BaseModel):
 
     id = Column(Integer, primary_key = True)
     activities = Column(CHAR(64))
-    owner = Column(CHAR(64))
+    owner_id = Column(Integer, ForeignKey('user.id'))
     due_date = Column(DATE)
     start_date = Column(DATE)
     actual_comp_date = Column(DATE)
@@ -137,8 +137,6 @@ class User_history(BaseModel):
     itcode = Column(CHAR(64))
     role = Column(CHAR(64))
     department = Column(CHAR(128))
-    # email = Column(CHAR(64))
-    # password = Column(CHAR(128))
     team = Column(CHAR(64))
     updateon = Column(DATETIME)
     updateby = Column(CHAR(64))
@@ -148,7 +146,7 @@ class Project_history(BaseModel):
 
     id = Column(Integer, primary_key = True)
     name = Column(CHAR(64))
-    brand = Column(CHAR(64))
+    brand_id = Column(Integer, ForeignKey('brand.id'))
     sub_seris = Column(CHAR(64))
     cot_number = Column(CHAR(64))
     ad = Column(DATE)
@@ -192,5 +190,6 @@ class Announcements_history(BaseModel):
     updateby = Column(CHAR(64))
 
 if __name__ == '__main__':
+    # drop_db()
     #init database
     init_db()
