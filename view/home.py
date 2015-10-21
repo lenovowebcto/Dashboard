@@ -84,7 +84,7 @@ class HomeHandler(RequestHandler):
         announcement1.updateby = 'Andy'
         
         announcement2 = Announcement()
-        announcement2.id = 5019
+        announcement2.id = 5018
         announcement2.project_name = "ideacentre 300S-08IHH"
         announcement2.sub_seris = "11e"
         announcement2.launch_type = "New Launch"
@@ -108,7 +108,7 @@ class HomeHandler(RequestHandler):
         
         
         announcement3 = Announcement()
-        announcement3.id = 5019
+        announcement3.id = 5017
         announcement3.project_name = "ideacentre 300S-08IHH"
         announcement3.sub_seris = "11e"
         announcement3.launch_type = "Async"
@@ -131,7 +131,7 @@ class HomeHandler(RequestHandler):
         announcement3.updateby = 'Andy'
         
         announcement4 = Announcement()
-        announcement4.id = 5019
+        announcement4.id = 5016
         announcement4.project_name = "Montessori AMD 1.5"
         announcement4.sub_seris = "11e"
         announcement4.launch_type = "New Launch"
@@ -154,7 +154,7 @@ class HomeHandler(RequestHandler):
         announcement4.updateby = 'Andy'
         
         announcement5 = Announcement()
-        announcement5.id = 5019
+        announcement5.id = 5014
         announcement5.project_name = "Montessori AMD 1.5"
         announcement5.sub_seris = "11e"
         announcement5.launch_type = "New Launch"
@@ -178,7 +178,7 @@ class HomeHandler(RequestHandler):
         
         
         announcement6 = Announcement()
-        announcement6.id = 5019
+        announcement6.id = 5015
         announcement6.project_name = "Montessori AMD 1.5"
         announcement6.sub_seris = "11e"
         announcement6.launch_type = "Async"

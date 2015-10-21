@@ -231,7 +231,7 @@
             <tbody>
                 {%for announcement in announcement_list%}
                     <tr class={{announcement.status_class}}>
-                        <td>{{announcement.id}}</td>
+                        <td><a href="#edit_{{announcement.id}}" role="button" data-toggle="modal">{{announcement.id}}</a></td>
                         <td>{{announcement.project_name}}</td>
                         <td>{{announcement.sub_seris}}</td>
                         <td>{{announcement.launch_type}}</td>
@@ -251,6 +251,132 @@
                         <td>{{announcement.overall_status}}</td>
                         <td>{{announcement.note}}</td>
                     </tr>
+                        <div id="edit_{{announcement.id}}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h3 id="myModalLabel">Edit Announcement</h3>
+                          </div>
+                          <div class="modal-body">
+                            <form class="form-horizontal" role="form">
+                                <div class='form-group span6'>
+                                    <div class="row">
+                                        <label class="col-sm-2 control-label span3 text-center">Announce ID</label>
+                                        <div class="col-sm-10 span3">
+                                            <input type='text' placeholder={{announcement.id}} class="form-control"></input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='form-group span6'>
+                                    <div class="row">
+                                        <label class="col-sm-2 control-label span3 text-center">Project Name</label>
+                                        <div class="col-sm-10 span3">
+                                            <input type='text' placeholder={{announcement.project_name}} class="form-control"></input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='form-group span6'>
+                                    <div class="row">
+                                        <label class="col-sm-2 control-label span3 text-center">Sub-series Name</label>
+                                        <div class="col-sm-10 span3">
+                                            <input type='text' placeholder={{announcement.sub_seris}} class="form-control"></input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='form-group span6'>
+                                    <div class="row">
+                                        <label class="col-sm-2 control-label span3 text-center">Launch Type</label>
+                                        <div class="col-sm-10 span3">
+                                            <input type='text' placeholder={{announcement.launch_type}} class="form-control"></input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='form-group span6'>
+                                    <div class="row">
+                                        <label class="col-sm-2 control-label span3 text-center">Web CTO AD</label>
+                                        <div class="col-sm-10 span3">
+                                            <input type='text' placeholder={{announcement.web_cto_ad}} class="form-control"></input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='form-group span6'>
+                                    <div class="row">
+                                        <label class="col-sm-2 control-label span3 text-center">Tables</label>
+                                        <div class="col-sm-10 span3">
+                                            <input type='text' placeholder={{announcement.web_cto_tables}} class="form-control"></input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='form-group span6'>
+                                    <div class="row">
+                                        <label class="col-sm-2 control-label span3 text-center">LOIS/IAL EOW</label>
+                                        <div class="col-sm-10 span3">
+                                            <input type='text' placeholder={{announcement.lois_eow}} class="form-control"></input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='form-group span6'>
+                                    <div class="row">
+                                        <label class="col-sm-2 control-label span3 text-center">LOIS/IAL AD</label>
+                                        <div class="col-sm-10 span3">
+                                            <input type='text' placeholder={{announcement.lois_ad}} class="form-control"></input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='form-group span6'>
+                                    <div class="row">
+                                        <label class="col-sm-2 control-label span3 text-center">SBB Account</label>
+                                        <div class="col-sm-10 span3">
+                                            <input type='text' placeholder={{announcement.lois_sbb}} class="form-control"></input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='form-group span6'>
+                                    <div class="row">
+                                        <label class="col-sm-2 control-label span3 text-center">LOIS MTM Account</label>
+                                        <div class="col-sm-10 span3">
+                                            <input type='text' placeholder={{announcement.lois_mtm}} class="form-control"></input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='form-group span6'>
+                                    <div class="row">
+                                        <label class="col-sm-2 control-label span3 text-center">IAL No</label>
+                                        <div class="col-sm-10 span3">
+                                            <input type='text' placeholder={{announcement.ial_no}} class="form-control"></input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='form-group span6'>
+                                    <div class="row">
+                                        <label class="col-sm-2 control-label span3 text-center">BPL No</label>
+                                        <div class="col-sm-10 span3">
+                                            <input type='text' placeholder={{announcement.ial_bpl_no}} class="form-control"></input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='form-group span6'>
+                                    <div class="row">
+                                        <label class="col-sm-2 control-label span3 text-center">Overall Status</label>
+                                        <div class="col-sm-10 span3">
+                                            <input type='text' placeholder={{announcement.overall_status}} class="form-control"></input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='form-group span6'>
+                                    <div class="row">
+                                        <label class="col-sm-2 control-label span3 text-center">Note</label>
+                                        <div class="col-sm-10 span3">
+                                            <input type='text' placeholder={{announcement.note}} class="form-control"></input>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+                            <button class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
                     {%end%}
             </tbody>
         </table>
