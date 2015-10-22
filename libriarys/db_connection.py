@@ -15,7 +15,7 @@ from sqlalchemy.orm import sessionmaker
 #                      )
 
 #connect DB by SQLalchemy
-DB_CONNECT_STRING = 'mysql+pymysql://'+user+password+':@'+host+'/'+dbname+'?charset=utf8'
+DB_CONNECT_STRING = 'mysql+pymysql://'+user+':'+password+'@'+host+'/'+dbname+'?charset=utf8'
 engine = create_engine(DB_CONNECT_STRING, echo=debug)
 DB_Session = sessionmaker(bind=engine)
 session = DB_Session()
