@@ -6,9 +6,9 @@ import tornado.web
 from tornado.web import url
 from config import debug
 
-#from view.index import IndexHandler
-#from view.user import *
-#from view.brand import *
+from view.index import IndexHandler
+from view.user import *
+from view.brand import *
 from view.home import HomeHandler
 
 class Application(tornado.web.Application):
