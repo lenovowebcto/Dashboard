@@ -9,7 +9,7 @@ host = 'localhost'
 db_port = 3306
 user = 'root'
 dbname = 'dashboard'
-password = ''
+password = 'root'
 
 debug = True
 
@@ -17,5 +17,7 @@ if os.name =='nt':
     upload_dir = os.getcwd()+"\\static\\image\\upload\\"
 else :
     upload_dir = os.getcwd()+"/static/image/upload/"
+    
+  
 
     
