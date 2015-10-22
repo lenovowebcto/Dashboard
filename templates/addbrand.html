@@ -1,4 +1,5 @@
 {% extends "base.html" %}  {%block content %}
+<div class="col-md-12">
 <div class="col-md-4 col-md-offset-4">
 	<form action="/brand/add" method="post">
         <h2 >Add Brand</h2>
@@ -9,5 +10,6 @@
 {#        <a href='/login' class="btn">commit</a>#}
 	</form>
     <div>{{ result }}</div>
+</div>
 </div>
 {%end %}
