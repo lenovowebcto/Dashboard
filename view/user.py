@@ -1,4 +1,5 @@
 from tornado.web import RequestHandler, authenticated
+from libriarys.user import login
 
 class BaseHandler(RequestHandler):
     def get_current_user(self):
@@ -6,11 +7,17 @@ class BaseHandler(RequestHandler):
 
 class LoginHandler(BaseHandler):
     def get(self):
-        self.render('login.html')
+        self.render('login.html', warning = '')
 
     def post(self):
-        self.set_secure_cookie("username",self.get_argument("username"))
-        self.redirect("/")
+        username = self.get_argument("username")
+        password = self.get_argument("password")
+        result = login(username,password)
+        if result:
+            self.set_secure_cookie("username",self.get_argument("username"))
+            self.redirect("/")
+        else:
+            self.render('login.html',warning = 'Login false.Please check your itcode and password.')
 
 class WelcomeHandler(BaseHandler):
     @authenticated
