@@ -19,6 +19,7 @@ class Application(tornado.web.Application):
             (r'/user/logout',LogoutHandler),
             (r'/user/regester',RegesterHandler),
             (r'/brand/add', BrandHandler),
+            (r'/home/', HomeHandler),
         ]
         settings = dict(
             template_path = os.path.join(os.path.dirname(__file__),"templates"),
