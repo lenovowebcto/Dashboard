@@ -1,5 +1,5 @@
 from tornado.web import RequestHandler
-from libriarys.brand import *
+from libriarys.config.brand import *
 
 class BrandHandler(RequestHandler):
     def get(self, *args, **kwargs):
