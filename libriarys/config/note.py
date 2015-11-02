@@ -1,9 +1,3 @@
-'''
-Created on 2015Äê10ÔÂ22ÈÕ
-
-@author: libb4
-'''
-
 from libriarys.DB_struct import Note
 from libriarys.db_connection import session
 

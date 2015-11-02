@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-<script src="http://code.jquery.com/jquery.js"></script>
-<script src={{static_url("js/bootstrap.min.js")}}></script>
-<div>
+<div class="main-container">
+
     <div class="panel panel-default table-responsive">
         <div class="panel-heading">Project</div>
-            <table class="table table-hover" contenteditable="false" id="project" style="margin-bottom: 0px;">
+            <table class="table table-striped table-bordered table-hover"  id="project" style="margin-bottom: 0px;">
                 <thead>
                     <tr>
                         <th>PROJECT</th>
@@ -31,7 +30,8 @@
                 </thead>
                 <tbody id="myproject">
                     {% for project in project_list %}
-                        <tr href="/home/?project={{project.id}}">
+                    <tr class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+{#                        <tr class="accordion-toggle collapsed" href="/home/?project={{project.id}}">#}
                             <td>{{project.name}}</td>
                             <td>{{project.sub_seris}}</td>
                             <td>{{project.cto_number}}</td>
@@ -56,10 +56,9 @@
                 </tbody>
             </table>
         </div>
-        {% if announcement_list %}
-        <div class="panel panel-default table-responsive">
-            <div class="panel-heading">Announcement</div>
-            <table class="table table-bordered table-hover" contenteditable="false">
+{#        {% if announcement_list %}#}
+        <div class="panel-collapse collapse" id="collapseOne">
+            <table class="table table-bordered table-hover" contenteditable="false" >
                 <thead>
                     <tr>
                         <th colspan="4">
@@ -138,7 +137,8 @@
                 </thead>
                 <tbody>
                     {%for announcement in announcement_list%}
-                        <tr class={{announcement.status_class}}>
+{#                        <tr class={{announcement.status_class}}>#}
+                        <tr >
                             <td><a href="#edit_{{announcement.id}}" role="button" data-toggle="modal">{{announcement.id}}</a></td>
                             <td>{{announcement.project_name}}</td>
                             <td>{{announcement.sub_seris}}</td>
@@ -293,12 +293,7 @@
                 </tbody>
             </table>
         </div>
-        {% end %}
+
 </div>
-    <script>
-        $("#myproject tr").click(function(){
-            var href = $(this).attr('href');
-            location.href=href;
-        });
-    </script>
+
 {% end %}

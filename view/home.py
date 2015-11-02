@@ -58,7 +58,7 @@ class HomeHandler(RequestHandler):
         project2.updateby = 'Andy'
         example_list = [project1,project2] 
         
-        project_id = self.get_argument('project','')
+        project_id = 1
         
         announcement1 = Announcement()
         announcement1.id = 5019
@@ -204,13 +204,13 @@ class HomeHandler(RequestHandler):
         'in porgress':'info',
         'delay':'danger'
         }
-        for ann in filter(lambda x:x.startswith('announcement'),locals().keys()):
-            if eval(ann).overall_status == "completed":
-                eval(ann).status_class = 'success'
-            elif eval(ann).overall_status == "in progress":
-                eval(ann).status_class = 'info'
-            else:
-                eval(ann).status_class = 'error'
+        # for ann in filter(lambda x:x.startswith('announcement'),locals().keys()):
+        #     if eval(ann).overall_status == "completed":
+        #         eval(ann).status_class = 'success'
+        #     elif eval(ann).overall_status == "in progress":
+        #         eval(ann).status_class = 'info'
+        #     else:
+        #         eval(ann).status_class = 'error'
         example_announce_list = []
         try:
             project_id = int(project_id)

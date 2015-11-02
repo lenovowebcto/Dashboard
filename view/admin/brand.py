@@ -1,7 +1,9 @@
-from tornado.web import RequestHandler
+from tornado.web import authenticated
 from libriarys.config.brand import *
+from libriarys.baseclass import BaseHandler
 
-class BrandHandler(RequestHandler):
+class BrandHandler(BaseHandler):
+    @authenticated
     def get(self, *args, **kwargs):
         self.render('addbrand.html',result = '')
 
