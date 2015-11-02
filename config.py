@@ -12,6 +12,7 @@ dbname = 'dashboard'
 password = 'root'
 
 debug = True
+default_user_password = '111111'
 
 if os.name =='nt':
     upload_dir = os.getcwd()+"\\static\\image\\upload\\"

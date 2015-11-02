@@ -9,9 +9,13 @@ from config import debug
 from view.index import IndexHandler
 from view.user import *
 from view.brand import *
+<<<<<<< HEAD
 from view.admin.note import *
 from view.config.series import *
 
+=======
+from view.home import HomeHandler
+>>>>>>> ca83cf27b263ddb7c75b660d0e78e3a3166a2dd6
 
 class Application(tornado.web.Application):
     def __init__(self):
@@ -21,8 +25,12 @@ class Application(tornado.web.Application):
             (r'/user/logout',LogoutHandler),
             (r'/user/regester',RegesterHandler),
             (r'/brand/add', BrandHandler),
+<<<<<<< HEAD
             (r'/config/series/add', SeriesHandler),
             (r'/admin/note/add', NoteHandler),
+=======
+            (r'/home/', HomeHandler),
+>>>>>>> ca83cf27b263ddb7c75b660d0e78e3a3166a2dd6
         ]
         settings = dict(
             template_path = os.path.join(os.path.dirname(__file__),"templates"),

@@ -19,10 +19,10 @@ class User(BaseModel):
 
     id = Column(Integer, primary_key=True)
     name = Column(CHAR(64))
-    itcode = Column(CHAR(64))
+    itcode = Column(CHAR(64),unique=True)
     role = Column(CHAR(64))
     department = Column(CHAR(128))
-    email = Column(CHAR(64))
+    email = Column(CHAR(64),unique=True)
     password = Column(CHAR(128))
     team = Column(CHAR(64))
     updateon = Column(DATETIME)
@@ -32,7 +32,7 @@ class Brand(BaseModel):
     __tablename__ = 'brand'
 
     id = Column(Integer,primary_key = True)
-    name = Column(CHAR(64))
+    name = Column(CHAR(64),unique=True)
 
 class Series(BaseModel):
     __tablename__ = 'config_series'
