@@ -1,0 +1,16 @@
+!Templates.html5.content!
+
+{% extends "base.html" %}  {%block content %}
+<div class="col-md-4 col-md-offset-4">
+	<form action="/config/note/add" method="post">
+        <h2 >Add Series</h2>
+
+        <input name="note" class="form-control" placeholder="input note" required autofocus>
+
+        <button class="btn  btn-primary " type="submit">commit</button>
+{#        <a href='/login' class="btn">commit</a>#}
+	</form>
+    <div>{{ result }}</div>
+</div>
+
+{% end %}

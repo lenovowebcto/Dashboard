@@ -34,6 +34,45 @@ class Brand(BaseModel):
     id = Column(Integer,primary_key = True)
     name = Column(CHAR(64))
 
+class Series(BaseModel):
+    __tablename__ = 'config_series'
+
+    id = Column(Integer,primary_key = True)
+    ser_name = Column(CHAR(64))
+    
+class User_role(BaseModel):
+    __tablename__ = 'config_role'
+
+    id = Column(Integer,primary_key = True)
+    role = Column(CHAR(64))   
+   
+class Launch_Type(BaseModel):
+    __tablename__ = 'config_ltype'
+
+    id = Column(Integer,primary_key = True)
+    type = Column(CHAR(20))   
+ 
+class Overall_Status(BaseModel):
+    __tablename__ = 'config_ostatus'
+
+    id = Column(Integer,primary_key = True)
+    status = Column(CHAR(20)) 
+class Note(BaseModel):
+    __tablename__ = 'config_notes'
+
+    id = Column(Integer,primary_key = True)
+    note = Column(CHAR(20))  
+    
+class Pro_type(BaseModel):
+    __tablename__ = 'config_pro_type'
+
+    id = Column(Integer,primary_key = True)
+    pro_type = Column(CHAR(20))    
+class Pro_status(BaseModel):
+    __tablename__ = 'config_pro_status'
+
+    id = Column(Integer,primary_key = True)
+    pro_type = Column(CHAR(20))                           
 class Project(BaseModel):
     __tablename__ = 'project'
 
