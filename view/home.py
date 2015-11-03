@@ -217,6 +217,7 @@ class HomeHandler(RequestHandler):
             example_announce_list = {1:[announcement1,announcement2,announcement3],2:[announcement4,announcement5,announcement6]}.get(project_id)
         except:
             pass
+
         self.render('home.html',project_list = example_list,announcement_list = example_announce_list)
 
 
