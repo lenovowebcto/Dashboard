@@ -3,7 +3,7 @@ from libriarys.config.brand import *
 from libriarys.baseclass import BaseHandler
 
 class BrandHandler(BaseHandler):
-    @authenticated
+#     @authenticated
     def get(self, *args, **kwargs):
         self.render('addbrand.html',result = '')
 
