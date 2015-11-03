@@ -3,7 +3,7 @@
     <div class="col-md-4 col-md-offset-4">
       <div class="container-fluid">
 	<div class="row-fluid">
-	  <h2>Add Brand</h2>
+	  <h2> Brand  List</h2>
 		<div class="span12">
 			<table class="table table-hover table-bordered">
 				<thead>
@@ -17,12 +17,10 @@
 					<tr>
 					<td> {{br.name}} </td>	
 						<td>
-						{{br.id}}
-							<a href="" >Edit</a>
+							<a href="/brand/add?id={{br.id}}" >Edit</a>
 						</td>
 					</tr>
 					{% end %}
-	
 				</tbody>
 			</table>
 		</div>
@@ -31,7 +29,7 @@
 		<div class="span10">
 		</div>
 		<div class="span2">
-        <a href="#" id="add" class="button button-action button-rounded button-tiny" data-toggle="modal" data-target="#addModel">Add</a>
+        <a href="/brand/add" >Add Brand</a>
 		</div>
 	</div>
 </div>

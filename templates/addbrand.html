@@ -4,9 +4,9 @@
         <form action="/brand/add" method="post">
         {% raw xsrf_form_html() %}
             <h2>Add Brand</h2>
-
+                <input type="hidden" value="{{id}}" name="id">
             <div class="form-group">
-                <input name="name" id="name" class="form-control" placeholder="input brand name" required autofocus>
+                <input name="name" value='{{name}}' class="form-control" placeholder="input brand name" required autofocus>
             </div>
             <div class="form-group">
                 <button class="btn  btn-primary " type="submit">commit</button>
