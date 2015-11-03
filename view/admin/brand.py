@@ -2,6 +2,14 @@ from tornado.web import authenticated
 from libriarys.config.brand import *
 from libriarys.baseclass import BaseHandler
 
+
+class BrandListHandler(BaseHandler):
+    #@authenticated
+    def get(self, *args, **kwargs):
+        Brand = get_all_brand()
+       
+        self.render('brandlist.html',brand = Brand)
+    
 class BrandHandler(BaseHandler):
 #     @authenticated
     def get(self, *args, **kwargs):
