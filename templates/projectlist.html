@@ -31,13 +31,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					{% for project in pro %}
+					{% for project,brand in pro %}
 					<tr>
 					<td><a href="add?id={{project.id}}">edit</a> ||
 					    <a href="add?id={{project.id}}">Deactive</a>
 					</td>	
 					<td> {{project.name}} </td>	
-					<td> {{project.brand_id}} </td>	
+					<td> {{brand.name}} </td>	
 					<td> {{project.sub_seris}} </td>	
 					<td> {{project.cot_number}} </td>	
 					<td> {{project.ad}} </td>	

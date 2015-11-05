@@ -5,7 +5,7 @@ from macpath import join
 def get_all_project():
     #aa = session.query(Project,Brand.name).join(Brand,Project.brand_id==Brand.id).all()
     
-    return session.query(Project).join(Brand,Project.brand_id==Brand.id).all()
+    return session.query(Project,Brand).join(Brand,Project.brand_id==Brand.id).all()
 
     
 def addproject(project):
@@ -20,5 +20,5 @@ def get_project_by_id(id):
 
 
 def updateProject(id,project):
-   # session.query(id)
+     session.query(id)
     

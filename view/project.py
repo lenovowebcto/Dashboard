@@ -17,9 +17,7 @@ class ProjectHandler(BaseHandler):
            self.render('addproject.html',brand = brand,project = pro,result="")
         else :
            self.render('addproject.html',brand = brand,result="")
-        
-       
-      
+         
     def post(self, *args, **kwargs):
         project = self.request.arguments
         
