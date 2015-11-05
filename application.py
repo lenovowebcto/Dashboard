@@ -9,8 +9,12 @@ from config import debug
 from view.index import IndexHandler
 from view.admin.user import *
 from view.admin.brand import *
+from view.admin.series import *
 from view.admin.note import *
-from view.config.series import *
+from view.admin.type import *
+from view.admin.status import *
+from view.admin.pro_status import *
+# from view.config.series import *
 
 from view.home import HomeHandler
 
@@ -23,6 +27,17 @@ class Application(tornado.web.Application):
             (r'/user/regester',RegesterHandler),
             (r'/brand/list', BrandListHandler),
             (r'/brand/add', BrandHandler),
+            (r'/series/list', SeriesListHandler),
+            (r'/series/add', SeriesHandler),
+            (r'/type/list', TypeListHandler),
+            (r'/type/add', TypeHandler),
+            (r'/status/list', StatusListHandler),
+            (r'/status/add', StatusHandler),
+            (r'/note/list', NoteListHandler),
+            (r'/note/add', NoteHandler),
+            (r'/pro_status/list', Pro_StatusListHandler),
+            (r'/pro_status/add', Pro_StatusHandler),
+            
             (r'/config/series/add', SeriesHandler),
             (r'/admin/note/add', NoteHandler),
             (r'/home/', HomeHandler),

@@ -15,16 +15,16 @@ def del_series_by_id(id):
 def update_series(id,ser_name):
     query = session.query(Series)
     series = query.get(id)
-    series.name = series_name
+    series.ser_name = ser_name
     session.commit()
 
 
 def get_series_by_id(id):
-    query = session.query(series)
-    return query.get(id).name
+    query = session.query(Series)
+    return query.get(id).ser_name
 
 def get_all_series():
-    query = session.query(series)
+    query = session.query(Series)
     return query.all()
 
 if __name__ == '__main__':

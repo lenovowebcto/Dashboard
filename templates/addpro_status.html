@@ -1,12 +1,12 @@
 {% extends "base.html" %}  {% block content %}
 <div class="col-md-12">
     <div class="col-md-4 col-md-offset-4">
-        <form action="/series/add" method="post">
+        <form action="/pro_status/add" method="post">
         {% raw xsrf_form_html() %}
-            <h2>Add Series</h2>
+            <h2>Add Pro_Status</h2>
                 <input type="hidden" value="{{id}}" name="id">
             <div class="form-group">
-                <input name="ser_name" value='{{name}}' class="form-control" placeholder="input brand name" required autofocus>
+                <input name="pro_type" value='{{name}}' class="form-control" placeholder="input brand name" required autofocus>
             </div>
             <div class="form-group">
                 <button class="btn  btn-primary " type="submit">commit</button>
