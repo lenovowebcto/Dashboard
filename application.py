@@ -13,6 +13,7 @@ from view.admin.note import *
 from view.config.series import *
 from view.project import *
 from view.project import *
+from view.announcement import *
 
 from view.home import HomeHandler
 
@@ -30,7 +31,9 @@ class Application(tornado.web.Application):
             (r'/home/', HomeHandler),
             
             (r'/project/index',ProIndexHandler),
-            (r'/project/add',ProjectHandler)
+            (r'/project/add',ProjectHandler),
+
+            (r'/Announcement/add',AnnouncementHandler),
         ]
         settings = dict(
             template_path = os.path.join(os.path.dirname(__file__),"templates"),

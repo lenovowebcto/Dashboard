@@ -1,0 +1,98 @@
+{% extends "base.html" %}  {% block content %}
+<div class="container">
+<div id="wrapper">
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Add Announcement</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+			<div class="panel-body">
+				<div class="row">
+                    <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Detail info as below
+                        </div>
+                       <form action="/Announcement/add" method="post">
+                      {% raw xsrf_form_html() %}
+                           <input type="hidden" name="id" value='{{ann.id}}' class="form-control"  >
+                       <div class="panel-body">
+                            <div  class="col-lg-3">
+							   <label>Project Name</label>
+							   <input class="form-control" type="text" name="project_name"  value="{{ann.project_name}}" />
+							</div>
+
+							 <div  class="col-lg-3">
+							   <label>Sub-series Name/CTO Number</label>
+							   <input class="form-control"  type="text" name="sub_seris" id="sub_seris" value="{{ann.sub_seris}}"/>
+							 </div>
+
+     	                    <div  class="col-lg-3">
+							   <label>Launch Type </label>
+							   <input class="form-control"  type="text" name="launch_type" id="launch_type" value="{{ann.launch_type}}"/>
+							</div>
+
+							<div  class="col-lg-3">
+							   <label>Web CTO AD </label>
+							   <input class="form-control"  type="text" name="web_cto_ad"  value="{{ann.web_cto_ad}}"/>
+							</div>
+							<div  class="col-lg-3">
+							   <label>Tables</label>
+							   <input class="form-control"  type="text" name="tables"  value="{{ann.tables}}"/>
+							</div>
+                           <div  class="col-lg-3">
+							   <label>LOIS/IAL EOW</label>
+							   <input class="form-control"  type="text" name="lois_ial_eow"  value="{{ann.lois_ial_eow}}"/>
+							</div>
+                           <div  class="col-lg-3">
+							   <label>LOIS/IAL AD</label>
+							   <input class="form-control"  type="text" name="lois_ial_ad"  value="{{ann.lois_ial_ad}}"/>
+							</div>
+                           <div  class="col-lg-3">
+							   <label>SBB Account</label>
+							   <input class="form-control"  type="text" name="sbb_account"  value="{{ann.sbb_account}}"/>
+							</div>
+                           <div  class="col-lg-3">
+							   <label>LOIS MTM Account</label>
+							   <input class="form-control"  type="text" name="lois_mtm_account"  value="{{ann.lois_mtm_account}}"/>
+							</div>
+                           <div  class="col-lg-3">
+							   <label>IAL MTM Account</label>
+							   <input class="form-control"  type="text" name="ial_mtm_account"  value="{{ann.ial_mtm_account}}"/>
+							</div>
+                           <div  class="col-lg-3">
+							   <label>IAL No.</label>
+							   <input class="form-control"  type="text" name="ial_no"  value="{{ann.ial_no}}"/>
+							</div>
+                           <div  class="col-lg-3">
+							   <label>BPL No.</label>
+							   <input class="form-control"  type="text" name="bpl_no"  value="{{ann.bpl_no}}"/>
+							</div>
+                           <div  class="col-lg-3">
+							   <label>Overall Status:</label>
+							   <input class="form-control"  type="text" name="overall_status"  value="{{ann.overall_status}}"/>
+							</div>
+                           <div  class="col-lg-3">
+							   <label>BPL No.</label>
+							   <input class="form-control"  type="text" name="note"  value="{{ann.note}}"/>
+							</div>
+
+                           </div>
+							<div  style="text-align:center;" >
+							    <input type="submit"  class="btn btn-success" value="SUBMIT"/></p>
+							</div>
+
+						</form>
+					</div>
+			</div></div>
+			<!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+</div>
+</div>
+
+{% end %}
