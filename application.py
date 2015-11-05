@@ -11,10 +11,17 @@ from view.admin.user import *
 from view.admin.brand import *
 from view.admin.series import *
 from view.admin.note import *
+
 from view.admin.type import *
 from view.admin.status import *
 from view.admin.pro_status import *
 # from view.config.series import *
+
+from view.config.series import *
+from view.project import *
+from view.project import *
+from view.announcement import *
+
 
 from view.home import HomeHandler
 
@@ -41,6 +48,11 @@ class Application(tornado.web.Application):
             (r'/config/series/add', SeriesHandler),
             (r'/admin/note/add', NoteHandler),
             (r'/home/', HomeHandler),
+            
+            (r'/project/index',ProIndexHandler),
+            (r'/project/add',ProjectHandler),
+
+            (r'/Announcement/add',AnnouncementHandler),
         ]
         settings = dict(
             template_path = os.path.join(os.path.dirname(__file__),"templates"),

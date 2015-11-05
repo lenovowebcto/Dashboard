@@ -28,6 +28,9 @@ def login(itcode,password):
     else:
         return False
 
+def adduser_by_dic(user):
+    session.execute(User.__table__.insert(),user)
+    session.commit()
 
 if __name__ == "__main__":
     # adduser('zhanghc','zhanghc5','pdm','cto','zhanghc5@lenovo.com','admin')
