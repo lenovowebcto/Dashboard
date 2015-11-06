@@ -11,7 +11,7 @@ class LoginHandler(BaseHandler):
         password = self.get_argument("password")
         result = login(username,password)
         if result:
-            self.set_secure_cookie("username",str(username))
+            self.set_secure_cookie("username",str(username),expires_days=None)
             self.redirect("/")
         else:
             self.render('login.html',warning = 'Login false.Please check your itcode and password.')
