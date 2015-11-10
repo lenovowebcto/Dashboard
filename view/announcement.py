@@ -7,7 +7,7 @@ from libriarys.config.brand import *
 #        Pro = get_all_project()
 #        self.render('projectlist.html',pro = Pro)
 #
-        
+
 class AnnouncementHandler(BaseHandler):
     def get(self, *args, **kwargs):
         id = self.get_argument('id',0)
@@ -17,7 +17,7 @@ class AnnouncementHandler(BaseHandler):
            announcement =  get_announcement_by_id(id)
            self.render('addannounctment.html',ann = announcement)
         else :
-           self.render('addannounctment.html',result="")
+           self.render('addannounctment.html', ann = '', result="")
          
     def post(self, *args, **kwargs):
         announcement = self.request.arguments
