@@ -6,53 +6,47 @@ import tornado.web
 from tornado.web import url
 from config import debug
 
-from view.index import IndexHandler
-from view.admin.user import *
-from view.admin.brand import *
-from view.admin.series import *
-from view.admin.note import *
+from view import index
+from view.admin import user
+from view.admin import brand
+from view.admin import series
+from view.admin import note
 
-from view.admin.type import *
-from view.admin.status import *
-from view.admin.pro_status import *
-# from view.config.series import *
+from view.admin import type
+from view.admin import status
+from view.admin import pro_status
 
-from view.config.series import *
-from view.project import *
-from view.project import *
-from view.announcement import *
-
-
-from view.home import HomeHandler
+from view import project
+from view import announcement
+from view import home
 
 class Application(tornado.web.Application):
     def __init__(self):
         handlers = [
-            (r'/',IndexHandler),
-            (r'/user/login',LoginHandler),
-            (r'/user/logout',LogoutHandler),
-            (r'/user/regester',RegesterHandler),
-            (r'/brand/list', BrandListHandler),
-            (r'/brand/add', BrandHandler),
-            (r'/series/list', SeriesListHandler),
-            (r'/series/add', SeriesHandler),
-            (r'/type/list', TypeListHandler),
-            (r'/type/add', TypeHandler),
-            (r'/status/list', StatusListHandler),
-            (r'/status/add', StatusHandler),
-            (r'/note/list', NoteListHandler),
-            (r'/note/add', NoteHandler),
-            (r'/pro_status/list', Pro_StatusListHandler),
-            (r'/pro_status/add', Pro_StatusHandler),
-            
-            (r'/config/series/add', SeriesHandler),
-            (r'/admin/note/add', NoteHandler),
-            (r'/home/', HomeHandler),
-            
-            (r'/project/index',ProIndexHandler),
-            (r'/project/add',ProjectHandler),
+            (r'/', index.IndexHandler),
+            (r'/user/login', user.LoginHandler),
+            (r'/user/logout', user.LogoutHandler),
+            (r'/user/regester', user.RegesterHandler),
+            (r'/brand/list', brand.BrandListHandler),
+            (r'/brand/add', brand.BrandHandler),
+            (r'/series/list', series.SeriesListHandler),
+            (r'/series/add', series.SeriesHandler),
+            (r'/type/list', type.TypeListHandler),
+            (r'/type/add', type.TypeHandler),
+            (r'/status/list', status.StatusListHandler),
+            (r'/status/add', status.StatusHandler),
+            (r'/note/list', note.NoteListHandler),
+            (r'/note/add', note.NoteHandler),
+            (r'/pro_status/list', pro_status.Pro_StatusListHandler),
+            (r'/pro_status/add', pro_status.Pro_StatusHandler),
 
-            (r'/Announcement/add',AnnouncementHandler),
+            (r'/admin/note/add', note.NoteHandler),
+            (r'/home/', home.HomeHandler),
+            
+            (r'/project/index', project.ProIndexHandler),
+            (r'/project/add', project.ProjectHandler),
+
+            (r'/Announcement/add',announcement.AnnouncementHandler),
         ]
         settings = dict(
             template_path = os.path.join(os.path.dirname(__file__),"templates"),
