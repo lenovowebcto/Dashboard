@@ -18,3 +18,8 @@ def get_all_Announcement():
     #aa = session.query(Project,Brand.name).join(Brand,Project.brand_id==Brand.id).all()
     pass
     # return session.query(Announcements,Brand).join(Brand,Project.brand_id==Brand.id).all()
+
+def get_announcement_by_project(id):
+    query = session.query(Announcements)
+    return query.filter(Announcements.project_id == id).all()
+

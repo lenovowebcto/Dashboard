@@ -7,6 +7,8 @@ def get_all_project():
     
     return session.query(Project,Brand).join(Brand,Project.brand_id==Brand.id).all()
 
+def get_all():
+    return session.query(Project).all()
     
 def addproject(project):
    
@@ -20,5 +22,5 @@ def get_project_by_id(id):
 
 
 def updateProject(id,project):
-     session.query(id)
-    
+     # session.query(id)
+    pass
