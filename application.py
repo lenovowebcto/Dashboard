@@ -46,7 +46,8 @@ class Application(tornado.web.Application):
             (r'/project/index', project.ProIndexHandler),
             (r'/project/add', project.ProjectHandler),
 
-            (r'/Announcement/add',announcement.AnnouncementHandler),
+            (r'/Announcement/add', announcement.AnnouncementHandler),
+            (r'/Announcement/list', announcement.AnnouncementIndexHandler)
         ]
         settings = dict(
             template_path = os.path.join(os.path.dirname(__file__),"templates"),

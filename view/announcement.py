@@ -2,11 +2,11 @@ from libriarys.baseclass import BaseHandler
 from libriarys.announcement import *
 from libriarys.config.brand import *
 
-# class AnnouncementIndexHandler(BaseHandler):
-#     def get(self, *args, **kwargs):
-#        Pro = get_all_project()
-#        self.render('projectlist.html',pro = Pro)
-#
+class AnnouncementIndexHandler(BaseHandler):
+    def get(self, *args, **kwargs):
+       ann = get_all_Announcement()
+       self.render('announcementlist.html',ann = ann)
+
 
 class AnnouncementHandler(BaseHandler):
     def get(self, *args, **kwargs):
@@ -28,11 +28,11 @@ class AnnouncementHandler(BaseHandler):
         if id>0 :
             del announcement['_xsrf']
             updateAnnouncement(id,announcement)
-            Ann = get_all_Announcement()
-            self.render('projectlist.html',result="success",pro = Ann)
+            ann = get_all_Announcement()
+            self.render('announcementlist.html',result="success",ann = ann)
         else :
             addAnnouncement(announcement)
-            Ann = get_all_Announcement()
-        self.render('projectlist.html',result="success",pro = Ann)
+            ann = get_all_Announcement()
+        self.render('announcementlist.html',result="success",ann = ann)
         
         
