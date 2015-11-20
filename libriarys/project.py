@@ -3,9 +3,10 @@ from libriarys.db_connection import session
 from macpath import join
 
 def get_all_project():
-    #aa = session.query(Project,Brand.name).join(Brand,Project.brand_id==Brand.id).all()
-    
-    return session.query(Project,Brand).join(Brand,Project.brand_id==Brand.id).all()
+    return session.query(Project,Brand).join(Brand,Project.brand_id==Brand.id).filter(Project.active == 1).all()
+
+def get_all_project2():
+    return session.query(Project,Brand).join(Brand,Project.brand_id==Brand.id).filter(Project.active == 0).all()
 
 def get_all():
     return session.query(Project).all()
@@ -22,5 +23,10 @@ def get_project_by_id(id):
 
 
 def updateProject(id,project):
-     # session.query(id)
+    session.query(Project).filter(Project.id == id).update(project)
+    session.commit()
+    
+def project_active(id):
+    #session.delete()    
     pass
+   

@@ -2,11 +2,11 @@
 <div class="col-md-12">
     <div class="col-md-4 col-md-offset-4">
         <form action="/project/add" method="post">
-        {% raw xsrf_form_html() %}
+       
             <h2>Add Project</h2>
-              <input type="hidden" name="id" value='{{project.id}}' class="form-control"  >
+              <input type="hidden" name="id" value='{{project.id if project else 0}}' class="form-control"  >
             <div class="form-group">
-                Project Name:   <input name="name" value='{{project.name}}' class="form-control"  >
+                Project Name:   <input name="name" value='{{project.name if project else ""}}' class="form-control"  >
             </div>
             <div class="form-group">
             Brand: 
@@ -18,57 +18,57 @@
                
             </div>
               <div class="form-group">
-              Sub-series:    <input name="sub_seris" value='{{project.sub_seris}}' class="form-control"  >
+              Sub-series:    <input name="sub_seris" value='{{project.sub_seris if project else ""}}' class="form-control"  >
             </div>
               <div class="form-group">
-               CTO Number:   <input name="cto_number" value='{{project.cto_number}}' class="form-control"  >
+               CTO Number:   <input name="cto_number" value='{{project.cto_number if project else ""}}' class="form-control"  >
             </div>
               <div class="form-group">
-              AD:    <input name="ad" value='{{project.ad}}' class="form-control"  >
+              AD:    <input name="ad" value='{{project.ad if project else ""}}' class="form-control"  >
             </div>
             
               <div class="form-group">
-              EOL Date:    <input name="eol_date" value='{{project.eol_date}}' class="form-control"  >
+              EOL Date:    <input name="eol_date" value='{{project.eol_date if project else ""}}' class="form-control"  >
             </div>
               <div class="form-group">
-              Planner:   <input name="planner" value='{{project.planner}}' class="form-control"  >
+              Planner:   <input name="planner" value='{{project.planner if project else ""}}' class="form-control"  >
             </div>
               <div class="form-group">
-               ODT Lead:   <input name="odt_lead" value='{{project.odt_lead}}' class="form-control"  >
+               ODT Lead:   <input name="odt_lead" value='{{project.odt_lead if project else ""}}' class="form-control"  >
             </div>
               <div class="form-group">
-              MKT Lead/PM:  <input name="mkt_lead" value='{{project.mkt_lead}}' class="form-control"  >
+              MKT Lead/PM:  <input name="mkt_lead" value='{{project.mkt_lead if project else ""}}' class="form-control"  >
             </div>
               <div class="form-group">
-               TPM:   <input name="tpm" value='{{project.tpm}}' class="form-control"  >
+               TPM:   <input name="tpm" value='{{project.tpm if project else ""}}' class="form-control"  >
             </div>
             
              <div class="form-group">
-               MCS BOM Contact:   <input name="mcs_bom" value='{{project.mcs_bom}}' class="form-control"  >
+               MCS BOM Contact:   <input name="mcs_bom" value='{{project.mcs_bom if project else ""}}' class="form-control"  >
             </div>
               <div class="form-group">
-               Comp BOM Contact:   <input name="comp_bom" value='{{project.comp_bom}}' class="form-control"  >
+               Comp BOM Contact:   <input name="comp_bom" value='{{project.comp_bom if project else ""}}' class="form-control"  >
             </div>
               <div class="form-group">
-               Web CTO PM:   <input name="web_cto_pm" value='{{project.web_cto_pm}}' class="form-control"  >
+               Web CTO PM:   <input name="web_cto_pm" value='{{project.web_cto_pm if project else ""}}' class="form-control"  >
             </div>
               <div class="form-group">
-               LOIS PM:   <input name="lois_pm" value='{{project.lois_pm}}' class="form-control"  >
+               LOIS PM:   <input name="lois_pm" value='{{project.lois_pm if project else ""}}' class="form-control"  >
             </div>
               <div class="form-group">
-               IAL PM:  <input name="ial_pm" value='{{project.ial_pm}}' class="form-control"  >
+               IAL PM:  <input name="ial_pm" value='{{project.ial_pm if project else ""}}' class="form-control"  >
             </div>
               <div class="form-group">
-               CSR Country Scope:   <input name="csr_country_scope" value='{{project.csr_country_scope}}' class="form-control"  >
+               CSR Country Scope:   <input name="csr_country_scope" value='{{project.csr_country_scope if project else ""}}' class="form-control"  >
             </div>
               <div class="form-group">
-               Web CTO Country Scope:   <input name="web_cto_coumtry_scop" value='{{project.web_cto_country_scop}}' class="form-control"  >
+               Web CTO Country Scope:   <input name="web_cto_country_scope" value='{{project.web_cto_country_scope if project else ""}}' class="form-control"  >
             </div>
              <div class="form-group">
-               CSR Name:    <input name="csr_name" value='{{project.csr_name}}' class="form-control"  >
+               CSR Name:    <input name="csr_name" value='{{project.csr_name if project else ""}}' class="form-control"  >
             </div>
               <div class="form-group">
-               POR Name:   <input name="por_name" value='{{project.por_name}}' class="form-control"  >
+               POR Name:   <input name="por_name" value='{{project.por_name if project else ""}}' class="form-control"  >
             </div>
             <div class="form-group">
                 <button class="btn  btn-primary " type="submit">commit</button>

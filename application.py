@@ -44,7 +44,8 @@ class Application(tornado.web.Application):
             (r'/home/', home.HomeHandler),
             
             (r'/project/index', project.ProIndexHandler),
-            (r'/project/add', project.ProjectHandler),
+            (r'/project/add', project.ProjectHandler),  
+            (r'/project/active', project.ActiveHandler), 
 
             (r'/Announcement/add', announcement.AnnouncementHandler),
             (r'/Announcement/list', announcement.AnnouncementIndexHandler)
