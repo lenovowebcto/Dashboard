@@ -49,7 +49,7 @@
                   {% for project,brand in pro %}
 					<tr>
 					<td><a href="add?id={{project.id}}">edit</a> ||
-					    <a href="active?id={{project.id}}">Deactive</a>
+					    <a href="active?id={{project.id}}&active=0">Deactive</a>
 					</td>	
 					<td> {{project.name}} </td>	
 					<td> {{brand.name}} </td>	
@@ -126,7 +126,7 @@
                   {% for project,brand in Pro2 %}
 					<tr>
 					<td>
-					    <a href="active?id={{project.id}}">Ative</a>
+					    <a href="active?id={{project.id}}&active=1">Ative</a>
 					</td>	
 					<td> {{project.name}} </td>	
 					<td> {{brand.name}} </td>	

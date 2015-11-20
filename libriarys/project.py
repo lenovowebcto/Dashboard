@@ -1,5 +1,5 @@
 from libriarys.DB_struct import Project, Brand
-from libriarys.db_connection import session
+from libriarys.db_connection import *
 from macpath import join
 
 def get_all_project():
@@ -26,7 +26,12 @@ def updateProject(id,project):
     session.query(Project).filter(Project.id == id).update(project)
     session.commit()
     
-def project_active(id):
-    #session.delete()    
-    pass
+def project_active(id,active):
+    #session.query(Project).filter(Project.id == id).update(active)
+   # session.commit()
+    sql = "update project set active=%s where id=%s"
+    return engine.execute(sql,active,id)
+
+    
+   
    

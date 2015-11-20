@@ -36,8 +36,13 @@ class ProjectHandler(BaseHandler):
 class ActiveHandler(BaseHandler):
       def get(self, *args, **kwargs):
           id = self.get_argument('id')
-          if id>0:
-              project_active(id)
+          active = self.get_argument('active')
+          project_active(id,active)
+          self.redirect('/project/index') 
+
+              
+        
+          
           
         
         
