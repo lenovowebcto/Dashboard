@@ -98,6 +98,7 @@ class Project(BaseModel):
     por_name = Column(CHAR(64))
     updateon = Column(DATETIME)
     updateby = Column(CHAR(64))
+    active = Column(Integer)
 
 class Announcements(BaseModel):
     __tablename__ = 'announcements'
