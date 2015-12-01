@@ -1,3 +1,4 @@
+from libriarys.DB_struct import User_history
 from libriarys.DB_struct import User
 from libriarys.db_connection import session
 from libriarys.commonfunction import md5
@@ -30,10 +31,43 @@ def login(itcode,password):
 
 def adduser_by_dic(user):
     session.execute(User.__table__.insert(),user)
+#     session.execute(User_history.__table__.insert(),user)
     session.commit()
 
 if __name__ == "__main__":
     # adduser('zhanghc','zhanghc5','pdm','cto','zhanghc5@lenovo.com','admin')
     result = login('zhanghc5','111111')
     print(result)
+
+# Ò³ÃæÂß¼­¿ªÊ¼
+def get_user_by_id(id):
+    query = session.query(User)
+#     query.filter(User.id == id).delete()
+    return query.get(id)
+
+def addUser(project):
+    session.execute(User.__table__.insert(),project)
+    session.execute(User_history.__table__.insert(),project)
+    session.commit()
+    
+def deleteUser(id):
+    query = session.query(User)
+    query.filter(User.id == id).delete()
+    session.commit()
+
+def updateUser(id,project):
+    session.query(User).filter(User.id == id).update(project)
+    session.commit()
+
+def get_all_User():
+    query = session.query(User)
+    return query.all()
+
+def get_user_by_project(id):
+    query = session.query(User)
+    return query.filter(User.project_id == id).all()
+
+
+
+
 

@@ -8,8 +8,9 @@ host = 'localhost'
 # host = '192.168.27.196'
 db_port = 3306
 user = 'root'
-dbname = 'dash'
-password = 'root'
+
+dbname = 'dashboard'
+password = '123456'
 
 debug = True
 default_user_password = '111111'

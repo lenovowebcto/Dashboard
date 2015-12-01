@@ -7,10 +7,11 @@ from tornado.web import url
 from config import debug
 
 from view import index
-from view.admin import user
 from view.admin import brand
 from view.admin import series
 from view.admin import note
+from view.admin import role
+from view.admin import user
 
 from view.admin import type
 from view.admin import status
@@ -37,6 +38,10 @@ class Application(tornado.web.Application):
             (r'/status/add', status.StatusHandler),
             (r'/note/list', note.NoteListHandler),
             (r'/note/add', note.NoteHandler),
+            (r'/user/list', user.UserListHandler),
+            (r'/user/add', user.UserHandler),
+            (r'/role/list', role.RoleListHandler),
+            (r'/role/add', role.RoleHandler),
             (r'/pro_status/list', pro_status.Pro_StatusListHandler),
             (r'/pro_status/add', pro_status.Pro_StatusHandler),
 
