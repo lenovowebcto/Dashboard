@@ -35,4 +35,37 @@ class AnnouncementHandler(BaseHandler):
             ann = get_all_Announcement()
         self.render('announcementlist.html',result="success",ann = ann)
         
-        
+class AnnouncementDetail(BaseHandler):
+    def get(self, *args, **kwargs):
+        id = self.get_argument('id',0)
+        id = int(id)
+        if id > 0 :
+            ann = get_announcement_detail(id)
+            self.render('announcementdetail.html')
+        else:
+            self.render('announcementlist.html')
+
+
+class CTOHandler(BaseHandler):
+    def get(self, *args, **kwargs):
+
+        self.render('announcementCTO.html')
+
+    def post(self, *args, **kwargs):
+        pass
+
+class IALHandler(BaseHandler):
+    def get(self, *args, **kwargs):
+        pass
+
+    def post(self, *args, **kwargs):
+        pass
+
+class LOISHandler(BaseHandler):
+    def get(self, *args, **kwargs):
+        pass
+
+    def post(self, *args, **kwargs):
+        pass
+
+

@@ -156,8 +156,10 @@
                                                 {% for announcement in announcement_list %}
                                                 {#                        <tr class={{announcement.status_class}}>#}
                                                 <tr>
-                                                    <td><a href="/Announcement/add?id={{ announcement.id }}" role="button"
-                                                           data-toggle="modal">{{ announcement.id }}</a></td>
+                                                    <td><a href="/Announcement/detail?id={{ announcement.id }}" role="button"
+                                                           data-toggle="modal">{{ announcement.id }}</a>
+                                                        ||<a href="/Announcement/add?id={{ announcement.id }}" role="button"
+                                                           data-toggle="modal">edit</a></td>
                                                     <td>{{ announcement.project_id }}</td>
                                                     <td>{{ announcement.sub_seris }}</td>
                                                     <td>{{ announcement.launch_type }}</td>

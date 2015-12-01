@@ -22,3 +22,5 @@ def get_announcement_by_project(id):
     query = session.query(Announcements)
     return query.filter(Announcements.project_id == id).all()
 
+def get_announcement_detail(id):
+    pass
