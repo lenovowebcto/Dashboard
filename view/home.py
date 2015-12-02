@@ -1,7 +1,7 @@
 from libriarys.baseclass import BaseHandler
 from libriarys import project
 from libriarys import announcement
-from libriarys.config import brand
+from libriarys.admin import brand
 
 
 class Project():

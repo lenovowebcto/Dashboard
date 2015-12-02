@@ -1,6 +1,6 @@
 from libriarys.baseclass import BaseHandler
 from libriarys.announcement import *
-from libriarys.config.brand import *
+from libriarys.admin.brand import *
 
 class AnnouncementIndexHandler(BaseHandler):
     def get(self, *args, **kwargs):

@@ -1,8 +1,8 @@
 from tornado.web import authenticated
-from libriarys.config.type import *
+from libriarys.admin.type import *
 from libriarys.baseclass import BaseHandler
-# from libriarys.config.type import *
-# from libriarys.config.series import get_all_type, get_type_by_id, update_type, add_type
+# from libriarys.admin.type import *
+# from libriarys.admin.series import get_all_type, get_type_by_id, update_type, add_type
 
 
 class TypeListHandler(BaseHandler):

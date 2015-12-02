@@ -1,8 +1,8 @@
 from tornado.web import authenticated
-from libriarys.config.pro_status import *
+from libriarys.admin.pro_status import *
 from libriarys.baseclass import BaseHandler
-# from libriarys.config.status import *
-# from libriarys.config.series import get_all_type, get_type_by_id, update_type, add_type
+# from libriarys.admin.status import *
+# from libriarys.admin.series import get_all_type, get_type_by_id, update_type, add_type
 
 
 class Pro_StatusListHandler(BaseHandler):

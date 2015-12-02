@@ -1,6 +1,6 @@
 from tornado.web import authenticated
 from libriarys.baseclass import BaseHandler
-from libriarys.config.role import *
+from libriarys.admin.role import *
 
 class RoleListHandler(BaseHandler):
     #@authenticated

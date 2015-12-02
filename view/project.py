@@ -1,6 +1,6 @@
 from libriarys.baseclass import BaseHandler
 from libriarys.project import *
-from libriarys.config.brand import *
+from libriarys.admin.brand import *
 class ProIndexHandler(BaseHandler):
     def get(self, *args, **kwargs):
        Pro = get_all_project()
@@ -28,7 +28,7 @@ class ProjectHandler(BaseHandler):
         if id>0 :
             updateProject(id,project)
         else :
-            project['active'] = 1  #ÐÂ¼ÓµÄÊôÐÔ
+            project['active'] = 1  #ï¿½Â¼Óµï¿½ï¿½ï¿½ï¿½ï¿½
             addproject(project) 
         Pro = get_all_project()       
         self.render('projectlist.html',result="success",pro = Pro)
