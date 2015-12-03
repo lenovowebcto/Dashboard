@@ -1,6 +1,7 @@
 from libriarys.baseclass import BaseHandler
 from libriarys.announcement import *
 from libriarys.admin.brand import *
+from libriarys import project
 
 class AnnouncementIndexHandler(BaseHandler):
     def get(self, *args, **kwargs):
@@ -12,12 +13,12 @@ class AnnouncementHandler(BaseHandler):
     def get(self, *args, **kwargs):
         id = self.get_argument('id',0)
         id = int(id)
-        # brand = get_all_brand()
+        pro = project.get_all()
         if id>0 :
            announcement =  get_announcement_by_id(id)
-           self.render('addannounctment.html',ann = announcement)
+           self.render('addannounctment.html',pro = pro, ann = announcement)
         else :
-           self.render('addannounctment.html', ann = '', result="")
+           self.render('addannounctment.html', pro = pro, ann = '', result="")
          
     def post(self, *args, **kwargs):
         announcement = self.request.arguments

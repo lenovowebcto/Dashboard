@@ -24,8 +24,13 @@
                        <div class="panel-body">
                             <div  class="col-lg-3">
 							   <label>Project Name</label>
-							   <input class="form-control" type="text" name="project_id"  value="{{ann.project_id if ann else ''}}" />
-							</div>
+							   <select name="project_id" class="form-control">
+							   {% for project in pro %}
+                      			<option value="{{project.id}}">{{project.name}}</option>
+                 				{% end %}
+					         
+					         </select>
+							   </div>
 
 							 <div  class="col-lg-3">
 							   <label>Sub-series Name/CTO Number</label>

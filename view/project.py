@@ -30,8 +30,9 @@ class ProjectHandler(BaseHandler):
         else :
             project['active'] = 1  #�¼ӵ�����
             addproject(project) 
-        Pro = get_all_project()       
-        self.render('projectlist.html',result="success",pro = Pro)
+        Pro = get_all_project()  
+        Pro2 = get_all_project2()     
+        self.render('projectlist.html',result="success",pro = Pro,Pro2 = Pro2)
 
 class ActiveHandler(BaseHandler):
       def get(self, *args, **kwargs):
