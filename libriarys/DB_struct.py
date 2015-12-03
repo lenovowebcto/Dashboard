@@ -121,6 +121,7 @@ class Announcements(BaseModel):
     note = Column(CHAR(128))
     updateon = Column(DATETIME)
     updateby = Column(CHAR(64))
+    active = Column(Integer)
 
 class CTO_Activity(BaseModel):
     __tablename__ = 'cto_activity'

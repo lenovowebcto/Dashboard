@@ -21,6 +21,8 @@
                            {% if ann !='' %}
                            <input type="hidden" name="id" value='{{ann.id}}' class="form-control"  >
                            {% end %}
+                           <input type="hidden" name="active" value="{{ann.active if ann else '1'}}" class="form-control"  >
+                           
                        <div class="panel-body">
                             <div  class="col-lg-3">
 							   <label>Project Name</label>
@@ -28,7 +30,6 @@
 							   {% for project in pro %}
                       			<option value="{{project.id}}">{{project.name}}</option>
                  				{% end %}
-					         
 					         </select>
 							   </div>
 

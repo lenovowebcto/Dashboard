@@ -46,6 +46,12 @@ class AnnouncementDetail(BaseHandler):
         else:
             self.render('announcementlist.html')
 
+class ActiveHandler(BaseHandler):
+      def get(self, *args, **kwargs):
+          id = self.get_argument('id')
+          active = self.get_argument('active')
+          announcement_active(id,active)
+          self.redirect('/Announcement/list') 
 
 class CTOHandler(BaseHandler):
     def get(self, *args, **kwargs):

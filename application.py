@@ -55,6 +55,7 @@ class Application(tornado.web.Application):
             (r'/Announcement/add', announcement.AnnouncementHandler),
             (r'/Announcement/list', announcement.AnnouncementIndexHandler),
             (r'/Announcement/detail', announcement.AnnouncementDetail),
+            (r'/Announcement/active', announcement.ActiveHandler), 
             (r'/Announcement/CTO', announcement.CTOHandler),
             (r'/Announcement/LOIS', announcement.LOISHandler),
             (r'/Announcement/IAL', announcement.IALHandler),
