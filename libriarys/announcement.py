@@ -46,7 +46,15 @@ def get_all_Announcement():
 
 def search_all_Announcement(brand_id, project_id, pro_type, start_AD, end_AD, status_id):
     search = "session.query(Announcements,Project).join(Project,Project.id==Announcements.project_id).filter(Announcements.active == 1"
-    
+    if brand_id !='':
+        search = search.join('Announcements.brand_id==').join(brand_id)
+    if project_id != '':
+        search = search.join('Announcements.project_id == ').join(project_id)
+    if pro_type != '':
+        search = search.join('Announcements.launch_type == ').join(pro_type)
+#     if start_AD !='':
+#         search = search.join('Announcements.')
+    search = search.join(').all()')
     return  exec(search).all()
 
 def get_announcement_by_project(id):

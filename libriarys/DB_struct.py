@@ -250,18 +250,6 @@ class Announcements_history(BaseModel):
     note = Column(CHAR(128))
     updateon = Column(DATETIME)
     updateby = Column(CHAR(64))
-    
-class History(BaseModel):
-    __tablename__ = 'history'  
-    
-    id = Column(Integer, primary_key=True)
-    type_id = Column(CHAR(128))
-    userid = Column(Integer, ForeignKey('user.id'))
-    type = Column(CHAR(64))
-    update_time = Column(DATE)
-    update_content = Column(CHAR(128))
-
-
 
 if __name__ == '__main__':
     # drop_db()

@@ -31,6 +31,8 @@ class ProjectHandler(BaseHandler):
         else :
             project['active'] = 1  
             addproject(project) 
+
+
         Pro = get_all_project()  
         Pro2 = get_all_project2()     
         self.render('projectlist.html',result="success",pro = Pro,Pro2 = Pro2)
