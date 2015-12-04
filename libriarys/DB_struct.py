@@ -180,7 +180,7 @@ class Task(BaseModel):
     start_date = Column(DATE)
     due_date = Column(DATE)
     actual_comp_date = Column(DATE)
-"""
+
 class History(BaseModel):
     __tablename__ = 'history'
     id = Column(Integer, primary_key=True)
@@ -189,7 +189,7 @@ class History(BaseModel):
     type = Column(CHAR(64))
     update_time = Column(DATE)
     update_content = Column(CHAR(128))
-"""    
+ 
     
 class User_history(BaseModel):
     __tablename__ = 'user_history'
