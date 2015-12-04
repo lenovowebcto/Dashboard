@@ -9,7 +9,7 @@ def get_all_project2():
     return session.query(Project,Brand).join(Brand,Project.brand_id==Brand.id).filter(Project.active == 0).all()
 
 def get_all():
-    return session.query(Project).all()
+    return session.query(Project).filter(Project.active == 1).all()
     
 def addproject(project):
    
@@ -27,11 +27,7 @@ def updateProject(id,project):
     session.commit()
     
 def project_active(id,active):
-    #session.query(Project).filter(Project.id == id).update(active)
-   # session.commit()
-    sql = "update project set active=%s where id=%s"
-    return engine.execute(sql,active,id)
+    session.query(Project).filter(Project.id == id).update({Project.active: active})
+    session.commit()
 
-    
-   
    
