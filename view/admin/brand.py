@@ -1,5 +1,5 @@
 from tornado.web import authenticated
-from libriarys.config.brand import *
+from libriarys.admin.brand import *
 from libriarys.baseclass import BaseHandler
 
 

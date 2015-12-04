@@ -21,11 +21,10 @@ def login(itcode,password):
     user = query.filter_by(itcode = itcode).first()
     if user :
         db_password = user.password
-        print(db_password)
         if md5(password) == db_password:
-            return True
+            return True,user
         else:
-            return False
+            return False,user
     else:
         return False
 
@@ -35,11 +34,11 @@ def adduser_by_dic(user):
     session.commit()
 
 if __name__ == "__main__":
-    # adduser('zhanghc','zhanghc5','pdm','cto','zhanghc5@lenovo.com','admin')
+    adduser('zhanghc','zhanghc5','pdm','cto','zhanghc5@lenovo.com','admin')
     result = login('zhanghc5','111111')
     print(result)
 
-# Ò³ÃæÂß¼­¿ªÊ¼
+# Ò³ï¿½ï¿½ï¿½ß¼ï¿½ï¿½ï¿½Ê¼
 def get_user_by_id(id):
     query = session.query(User)
 #     query.filter(User.id == id).delete()

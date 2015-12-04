@@ -1,7 +1,7 @@
 from tornado.web import authenticated
-from libriarys.config.brand import *
+from libriarys.admin.brand import *
 from libriarys.baseclass import BaseHandler
-from libriarys.config.series import get_all_series, get_series_by_id,\
+from libriarys.admin.series import get_all_series, get_series_by_id,\
     update_series, add_series
 
 class SeriesListHandler(BaseHandler):

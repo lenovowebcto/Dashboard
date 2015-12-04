@@ -55,11 +55,13 @@ class Application(tornado.web.Application):
             
             (r'/project/index', project.ProIndexHandler),
             (r'/project/add', project.ProjectHandler),  
-            (r'/project/active', project.ActiveHandler), 
+            (r'/project/active', project.ActiveHandler),
+            (r'/history/project/query', project.ProQuyHandler),  
 
             (r'/Announcement/add', announcement.AnnouncementHandler),
             (r'/Announcement/list', announcement.AnnouncementIndexHandler),
             (r'/Announcement/detail', announcement.AnnouncementDetail),
+            (r'/Announcement/active', announcement.ActiveHandler), 
             (r'/Announcement/CTO', announcement.CTOHandler),
             (r'/Announcement/LOIS', announcement.LOISHandler),
             (r'/Announcement/IAL', announcement.IALHandler),

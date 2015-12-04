@@ -11,9 +11,10 @@ class LoginHandler(BaseHandler):
     def post(self):
         username = self.get_argument("username")
         password = self.get_argument("password")
-        result = login(username,password)
+        result,user = login(username,password)
         if result:
             self.set_secure_cookie("username",str(username),expires_days=None)
+            self.set_secure_cookie("userid",str(user.id),expires_days=None)
             self.redirect("/")
         else:
             self.render('login.html',warning = 'Login false.Please check your itcode and password.')
@@ -36,7 +37,7 @@ class RegesterHandler(BaseHandler):
     def post(self, *args, **kwargs):
         pass
  
-#    Ò³ÃæÂß¼­¿ªÊ¼ 
+#    Ò³ï¿½ï¿½ï¿½ß¼ï¿½ï¿½ï¿½Ê¼ 
 class UserListHandler(BaseHandler):
     #@authenticated
     def get(self, *args, **kwargs):
@@ -50,16 +51,16 @@ class UserHandler(BaseHandler):
         dele = self.get_argument('del',"0")
         id = int(id)
         # brand = get_all_brand()
-        #É¾³ý²Ù×÷
+        #É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if dele == "1":
             deleteUser(id)
             Ann = get_all_User()
             self.render('userlist.html',result="success",pro = Ann)
-        #ÐÞ¸ÄÒ³Ãæ
+        #ï¿½Þ¸ï¿½Ò³ï¿½ï¿½
         if id>0 :
             user =  get_user_by_id(id)
             self.render('adduser.html',warning = '', ann = user)
-        #Ìí¼ÓÒ³Ãæ
+        #ï¿½ï¿½ï¿½Ò³ï¿½ï¿½
         else :
             self.render('adduser.html', ann = '', warning = '')
                    
@@ -68,7 +69,7 @@ class UserHandler(BaseHandler):
         id = self.get_argument('id',0)
         id = int(id)
         
-        #ÐÞ¸Ä²Ù×÷
+        #ï¿½Þ¸Ä²ï¿½ï¿½ï¿½
         if id>0 :
             if user['password'] == user['confpassword']:
                 del user['_xsrf']
@@ -80,7 +81,7 @@ class UserHandler(BaseHandler):
                 del user['_xsrf']
                 user =  get_user_by_id(id)
                 self.render('adduser.html',ann = user ,warning = 'Password false.Please check your password.')                  
-        #Ìí¼Ó²Ù×÷
+        #ï¿½ï¿½Ó²ï¿½ï¿½ï¿½
         else :
             if user['password'] == user['confpassword']:
                 del user['_xsrf']
