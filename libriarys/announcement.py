@@ -22,6 +22,12 @@ def announcement_active(id,active):
 def get_all_Announcement():
     return session.query(Announcements,Project).join(Project,Project.id==Announcements.project_id).filter(Announcements.active == 1).all()
 
+def search_all_Announcement(brand_id, project_id, pro_type, start_AD, end_AD, status_id):
+    search = "session.query(Announcements,Project).join(Project,Project.id==Announcements.project_id).filter(Announcements.active == 1"
+    
+    return  exec(search).all()
+
+
 def get_announcement_by_project(id):
     query = session.query(Announcements)
     return query.filter(Announcements.project_id == id).all()
