@@ -44,9 +44,10 @@ def get_user_by_id(id):
 #     query.filter(User.id == id).delete()
     return query.get(id)
 
-def addUser(project):
-    session.execute(User.__table__.insert(),project)
-    session.execute(User_history.__table__.insert(),project)
+def addUser(user):
+    
+    session.execute(User.__table__.insert(),user)
+    session.execute(User_history.__table__.insert(),user)
     session.commit()
     
 def deleteUser(id):

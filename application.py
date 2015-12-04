@@ -17,6 +17,8 @@ from view.admin import type
 from view.admin import status
 from view.admin import pro_status
 
+from view.admin import history
+
 from view import project
 from view import announcement
 from view import home
@@ -45,7 +47,10 @@ class Application(tornado.web.Application):
             (r'/role/add', role.RoleHandler),
             (r'/pro_status/list', pro_status.Pro_StatusListHandler),
             (r'/pro_status/add', pro_status.Pro_StatusHandler),
-
+            
+            (r'/history/list', history.HistoryListHandler),
+            (r'/history/add', history.HistoryHandler),
+            
             (r'/admin/note/add', note.NoteHandler),
             (r'/home/', home.HomeHandler),
             
