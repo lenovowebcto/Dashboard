@@ -29,8 +29,5 @@ def updateProject(id,project):
 def project_active(id,active):
     session.query(Project).filter(Project.id == id).update({Project.active: active})
     session.commit()
-   
 
-    
-   
    
