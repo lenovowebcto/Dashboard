@@ -15,18 +15,11 @@ class Announcement():
 class HomeHandler(BaseHandler):
     def get(self, *args, **kwargs):
         project_list = project.get_all()
-        project_id = 1
-        announcement_list = []
-        try:
-            project_id = int(project_id)
-            announcement_list = announcement.get_announcement_by_project(project_id)
-        except:
-            pass
-        # for p in project_list:
-        #     print(p)
-        # for a in announcement_list:
-        #     print(a)
+        announcement_dict = {}
+        for each in project_list:
+            announcement_dict[each.id] = announcement.get_announcement_by_project(each.id)
+        self.render('home.html', project_list=project_list, announcement_dict =announcement_dict)
 
-        self.render('home.html', project_list=project_list, announcement_list=announcement_list)
+
 
 

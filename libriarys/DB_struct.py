@@ -123,10 +123,19 @@ class Announcements(BaseModel):
     updateby = Column(CHAR(64))
     active = Column(Integer)
 
+class Activity(BaseModel):
+    __tablename__ = 'activity'
+    id = Column(Integer, primary_key = True)
+    activity = Column(CHAR(64))
+    team = Column(CHAR(64))
+    week_before_ad = Column(Integer)
+    week_spend = Column(Integer)
+    
 class CTO_Activity(BaseModel):
     __tablename__ = 'cto_activity'
 
     id = Column(Integer, primary_key = True)
+    announcement_id = Column(Integer, ForeignKey('announcements.id'))
     activities = Column(CHAR(64))
     owner_id = Column(Integer, ForeignKey('user.id'))
     due_date = Column(DATE)
@@ -137,6 +146,7 @@ class LOIS_Activity(BaseModel):
     __tablename__ = 'lois_activity'
 
     id = Column(Integer, primary_key = True)
+    announcement_id = Column(Integer, ForeignKey('announcements.id'))
     activities = Column(CHAR(64))
     owner_id = Column(Integer, ForeignKey('user.id'))
     due_date = Column(DATE)
@@ -147,6 +157,7 @@ class IAL_Activity(BaseModel):
     __tablename__ = 'ial_activity'
 
     id = Column(Integer, primary_key = True)
+    announcement_id = Column(Integer, ForeignKey('announcements.id'))
     activities = Column(CHAR(64))
     owner_id = Column(Integer, ForeignKey('user.id'))
     due_date = Column(DATE)
@@ -170,6 +181,16 @@ class Task(BaseModel):
     due_date = Column(DATE)
     actual_comp_date = Column(DATE)
 
+class History(BaseModel):
+    __tablename__ = 'history'
+    id = Column(Integer, primary_key=True)
+    type_id = Column(CHAR(128))
+    userid = Column(Integer, ForeignKey('user.id'))
+    type = Column(CHAR(64))
+    update_time = Column(DATE)
+    update_content = Column(CHAR(128))
+    
+    
 class User_history(BaseModel):
     __tablename__ = 'user_history'
 
@@ -229,6 +250,18 @@ class Announcements_history(BaseModel):
     note = Column(CHAR(128))
     updateon = Column(DATETIME)
     updateby = Column(CHAR(64))
+    
+class History(BaseModel):
+    __tablename__ = 'history'  
+    
+    id = Column(Integer, primary_key=True)
+    type_id = Column(CHAR(128))
+    userid = Column(Integer, ForeignKey('user.id'))
+    type = Column(CHAR(64))
+    update_time = Column(DATE)
+    update_content = Column(CHAR(128))
+
+
 
 if __name__ == '__main__':
     # drop_db()

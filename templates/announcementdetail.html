@@ -25,12 +25,12 @@
                             </thead>
                             <tbody>
                             <tr align="center">
-                                    <td>Announce ID</td>
-                                    <td>Sub-series Name</td>
-                                    <td>Launch Type</td>
-                                    <td>LOIS/IAL EOW</td>
-                                    <td>LOIS/IAL AD</td>
-                                    <td>Web CTO AD</td>
+                                    <td>{{ann.id}}</td>
+                                    <td>{{ann.sub_seris}}</td>
+                                    <td>{{ann.launch_type}}</td>
+                                    <td>{{ann.lois_ial_eow}}</td>
+                                    <td>{{ann.lois_ial_ad}}</td>
+                                    <td>{{ann.web_cto_ad}}</td>
                                 </tr>
 
                             </tbody>
@@ -50,7 +50,7 @@
                             </thead>
                             <tbody>
                             <tr>
-                                    <td align="center">WEB CTO<br><a href="/Announcement/CTO">Edit</a></td>
+                                    <td align="center">WEB CTO<br><a href="/Announcement/CTO?id={{ann.id}}">Edit</a></td>
                                     <td>Sub-series Name</td>
                                     <td>Launch Type</td>
                                     <td>LOIS/IAL EOW</td>
@@ -58,7 +58,7 @@
                                     <td>Web CTO AD</td>
                                 </tr>
                             <tr>
-                                    <td align="center">LOIS<br><a href="/Announcement/LOIS">Edit</a></td>
+                                    <td align="center">LOIS<br><a href="/Announcement/LOIS?id={{ann.id}}">Edit</a></td>
                                     <td>Sub-series Name</td>
                                     <td>Launch Type</td>
                                     <td>LOIS/IAL EOW</td>
@@ -66,7 +66,7 @@
                                     <td>Web CTO AD</td>
                                 </tr>
                             <tr>
-                                    <td align="center">IAL<br><a href="/Announcement/IAL">Edit</a></td>
+                                    <td align="center">IAL<br><a href="/Announcement/IAL?id={{ann.id}}">Edit</a></td>
                                     <td>Sub-series Name</td>
                                     <td>Launch Type</td>
                                     <td>LOIS/IAL EOW</td>

@@ -73,7 +73,7 @@
                                 </tr>
                                 <tr>
                                     <td colspan="19">
-                                        {% if announcement_list %}
+                                        {% if project.id in announcement_dict.keys() %}
                                         <div class="panel-collapse collapse" id="{{ project.id }}">
                                             <table class="table table-bordered table-hover" contenteditable="false">
                                                 <thead>
@@ -153,7 +153,7 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                {% for announcement in announcement_list %}
+                                                {% for announcement in announcement_dict[project.id] %}
                                                 {#                        <tr class={{announcement.status_class}}>#}
                                                 <tr>
                                                     <td><a href="/Announcement/detail?id={{ announcement.id }}" role="button"

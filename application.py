@@ -17,9 +17,12 @@ from view.admin import type
 from view.admin import status
 from view.admin import pro_status
 
+from view.admin import history
+
 from view import project
 from view import announcement
 from view import home
+from view import activity
 
 class Application(tornado.web.Application):
     def __init__(self):
@@ -44,13 +47,17 @@ class Application(tornado.web.Application):
             (r'/role/add', role.RoleHandler),
             (r'/pro_status/list', pro_status.Pro_StatusListHandler),
             (r'/pro_status/add', pro_status.Pro_StatusHandler),
-
+            
+            (r'/history/list', history.HistoryListHandler),
+            (r'/history/add', history.HistoryHandler),
+            
             (r'/admin/note/add', note.NoteHandler),
             (r'/home/', home.HomeHandler),
             
             (r'/project/index', project.ProIndexHandler),
             (r'/project/add', project.ProjectHandler),  
-            (r'/project/active', project.ActiveHandler), 
+            (r'/project/active', project.ActiveHandler),
+            (r'/history/project/query', project.ProQuyHandler),  
 
             (r'/Announcement/add', announcement.AnnouncementHandler),
             (r'/Announcement/list', announcement.AnnouncementIndexHandler),
@@ -59,6 +66,9 @@ class Application(tornado.web.Application):
             (r'/Announcement/CTO', announcement.CTOHandler),
             (r'/Announcement/LOIS', announcement.LOISHandler),
             (r'/Announcement/IAL', announcement.IALHandler),
+            
+            (r'/activity/add', activity.ActivityHandler),
+            (r'/activity/list', activity.ActivityListHandler),
         ]
         settings = dict(
             template_path = os.path.join(os.path.dirname(__file__),"templates"),

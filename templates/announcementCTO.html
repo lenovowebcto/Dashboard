@@ -22,43 +22,26 @@
                            
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example2">
                                 <thead>
-                                <tr>
-					   <td> Activities</td>
-					   <td> Owner(IT code)</td>
-					   <td> Due Date</td>
-					   <td> Start Date</td>
-					   <td> Actual Comp Date</td>
-					   <td> Action</td>
-
-					</tr>
+                                    <tr>
+                                       <td> Activities</td>
+                                       <td> Owner(IT code)</td>
+                                       <td> Due Date</td>
+                                       <td> Start Date</td>
+                                       <td> Actual Comp Date</td>
+                                       <td> Action</td>
+                                    </tr>
                                 </thead>
                                 <tbody>
-{#                                {% for project,brand in pro %}#}
-					<tr>
-{#					<td><a href="add?id={{project.id}}">edit</a> ||#}
-{#					    <a href="add?id={{project.id}}">Deactive</a>#}
-{#					</td>	#}
-{#					<td> {{project.name}} </td>	#}
-{#					<td> {{brand.name}} </td>	#}
-{#					<td> {{project.sub_seris}} </td>	#}
-{#					<td> {{project.cto_number}} </td>#}
-{#					<td> {{project.ad}} </td>	#}
-{#					<td> {{project.eol_date}} </td>	#}
-{#					<td> {{project.planner}} </td>	#}
-{#					#}
-{#					<td> {{project.odt_lead}} </td>	#}
-{#					<td> {{project.mkt_lead}} </td>	#}
-{#					<td> {{project.tpm}} </td>	#}
-{#					<td> {{project.mcs_bom}} </td>	#}
-{#					<td> {{project.comp_bom}} </td>	#}
-{#					<td> {{project.web_cto_pm}} </td>	#}
-{#					<td> {{project.lois_pm}} </td>	#}
-{#					#}
-{#					<td> {{project.ial_pm}} </td>	#}
-{#					<td> {{project.csr_country_scope}} </td>	#}
-{#					<td> {{project.web_cto_country_scope}} </td>#}
-					</tr>
-{#					{% end %}#}
+                                    {% for activity in activitys%}
+                                        <tr>
+                                            <td>{{activity.activities}}</td>
+                                            <td>{{activity.owner_id}}</td>
+                                            <td>{{activity.due_date}}</td>
+                                            <td>{{activity.start_date}}</td>
+                                            <td>{{activity.actual_comp_date}}</td>
+                                            <td>{{'done' if activity.actual_comp_date else 'waiting'}}</td>
+                                        </tr>
+                                    {% end %}
                                 </tbody>
                             </table>
                         </div>

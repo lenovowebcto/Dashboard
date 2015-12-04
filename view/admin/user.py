@@ -86,6 +86,7 @@ class UserHandler(BaseHandler):
             if user['password'] == user['confpassword']:
                 del user['_xsrf']
                 del user['confpassword']
+                user['password']=md5(user['password'])
                 addUser(user)
                 Ann = get_all_User()
                 self.render('userlist.html',result="success",pro = Ann)

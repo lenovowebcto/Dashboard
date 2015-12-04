@@ -45,7 +45,14 @@
 
 							<div  class="col-lg-3">
 							   <label>Web CTO AD </label>
-							   <input class="form-control"  type="text" name="web_cto_ad"  value="{{ann.web_cto_ad if ann else ''}}"/>
+							   <!--<input class="form-control"  type="text" name="web_cto_ad"  value="{{ann.web_cto_ad if ann else ''}}"/>-->
+                               <div data-link-format="yyyy-mm-dd" data-link-field="dtp_input2" data-date-format="yyyy-mm-dd" data-date="" class="input-group date form_date col-md-12">
+                                    <input type="text" readonly="" name="web_cto_ad" value="{{ann.web_cto_ad if ann else ''}}" size="16" class="form-control" id="datetimepicker">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                               <script type="text/javascript">
+                                    $(function(){$(".form_date").datetimepicker({format: "yyyy-mm-dd"})});
+                               </script>
 							</div>
 							<div  class="col-lg-3">
 							   <label>Tables</label>
@@ -53,11 +60,27 @@
 							</div>
                            <div  class="col-lg-3">
 							   <label>LOIS/IAL EOW</label>
-							   <input class="form-control"  type="text" name="lois_ial_eow"  value="{{ann.lois_ial_eow if ann else ''}}"/>
+							   <!--<input class="form-control"  type="text" name="lois_ial_eow"  value="{{ann.lois_ial_eow if ann else ''}}"/>-->
+                               <div data-link-format="yyyy-mm-dd" data-link-field="dtp_input2" data-date-format="yyyy-mm-dd" data-date="" class="input-group date form_date col-md-12">
+                                    <input type="text" readonly="" name="lois_ial_eow" value="{{ann.lois_ial_eow if ann else ''}}" size="16" class="form-control" id="datetimepicker">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                               <script type="text/javascript">
+                                    $(function(){
+                                    $(".form_date").datetimepicker({format: "yyyy-mm-dd"});
+                               </script>
 							</div>
                            <div  class="col-lg-3">
 							   <label>LOIS/IAL AD</label>
-							   <input class="form-control"  type="text" name="lois_ial_ad"  value="{{ann.lois_ial_ad if ann else ''}}"/>
+							   <!--<input class="form-control"  type="text" name="lois_ial_ad"  value="{{ann.lois_ial_ad if ann else ''}}"/>-->
+                               <div data-link-format="yyyy-mm-dd" data-link-field="dtp_input2" data-date-format="yyyy-mm-dd" data-date="" class="input-group date form_date col-md-12">
+                                    <input type="text" readonly="" name="lois_ial_ad" value="{{ann.lois_ial_ad if ann else ''}}" size="16" class="form-control" id="datetimepicker">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                               <script type="text/javascript">
+                                    $(function(){$(".form_date").datetimepicker({format: "yyyy-mm-dd"})});
+                                    });
+                               </script>
 							</div>
                            <div  class="col-lg-3">
 							   <label>SBB Account</label>
