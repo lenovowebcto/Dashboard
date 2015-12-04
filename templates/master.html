@@ -14,6 +14,9 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="{{ static_url("css/main.css") }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ static_url("css/bootstrap-datetimepicker.min.css")}}" type="text/css"/>
+    <link rel="stylesheet" href="{{ static_url("css/buttons.css")}}" type="text/css"/>
+
     {% block head %}{% end %}
   </head>
   <body >
@@ -25,8 +28,42 @@
         <p>&copy; <a href="http://www.lenovo.com.cn/">Lenovo 2015</a></p>
 	</footer>
       </div>
-    <script type="text/javascript" src="{{ static_url("js/jquery.min.js") }}"></script>
-    <script src="{{ static_url("js/bootstrap.min.js") }}"></script>
-    <script type="text/javascript" src="{{ static_url("js/main.js") }}"></script>
+    <script  src="{{ static_url("js/jquery.min.js") }}" type="text/javascript"></script>
+    <script  src="{{ static_url("js/bootstrap.min.js") }}" type="text/javascript"></script>
+    <script  src="{{ static_url("js/main.js") }}" type="text/javascript"></script>
+    <script  src="{{ static_url("js/bootstrap-datetimepicker.js")}}" type="text/javascript"></script>
+    <script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        //language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		forceParse: 0,
+        showMeridian: 1
+    });
+	$('.form_date').datetimepicker({
+        language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+    });
+	$('.form_time').datetimepicker({
+        language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 1,
+		minView: 0,
+		maxView: 1,
+		forceParse: 0
+    });
+</script>
   </body>
 </html>

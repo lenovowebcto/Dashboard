@@ -20,6 +20,7 @@ from view.admin import pro_status
 from view import project
 from view import announcement
 from view import home
+from view import activity
 
 class Application(tornado.web.Application):
     def __init__(self):
@@ -58,6 +59,9 @@ class Application(tornado.web.Application):
             (r'/Announcement/CTO', announcement.CTOHandler),
             (r'/Announcement/LOIS', announcement.LOISHandler),
             (r'/Announcement/IAL', announcement.IALHandler),
+            
+            (r'/activity/add', activity.ActivityHandler),
+            (r'/activity/list', activity.ActivityListHandler),
         ]
         settings = dict(
             template_path = os.path.join(os.path.dirname(__file__),"templates"),

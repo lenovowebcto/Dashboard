@@ -122,10 +122,19 @@ class Announcements(BaseModel):
     updateon = Column(DATETIME)
     updateby = Column(CHAR(64))
 
+class Activity(BaseModel):
+    __tablename__ = 'activity'
+    id = Column(Integer, primary_key = True)
+    activity = Column(CHAR(64))
+    team = Column(CHAR(64))
+    week_before_ad = Column(Integer)
+    week_spend = Column(Integer)
+    
 class CTO_Activity(BaseModel):
     __tablename__ = 'cto_activity'
 
     id = Column(Integer, primary_key = True)
+    announcement_id = Column(Integer, ForeignKey('announcements.id'))
     activities = Column(CHAR(64))
     owner_id = Column(Integer, ForeignKey('user.id'))
     due_date = Column(DATE)
@@ -136,6 +145,7 @@ class LOIS_Activity(BaseModel):
     __tablename__ = 'lois_activity'
 
     id = Column(Integer, primary_key = True)
+    announcement_id = Column(Integer, ForeignKey('announcements.id'))
     activities = Column(CHAR(64))
     owner_id = Column(Integer, ForeignKey('user.id'))
     due_date = Column(DATE)
@@ -146,6 +156,7 @@ class IAL_Activity(BaseModel):
     __tablename__ = 'ial_activity'
 
     id = Column(Integer, primary_key = True)
+    announcement_id = Column(Integer, ForeignKey('announcements.id'))
     activities = Column(CHAR(64))
     owner_id = Column(Integer, ForeignKey('user.id'))
     due_date = Column(DATE)

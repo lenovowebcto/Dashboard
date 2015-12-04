@@ -40,10 +40,11 @@
                                 <tbody>
                                 {% for a in ann %}
 					<tr>
-					<td><a href="add?id={{a.id}}">edit</a> ||
+					<td>
+                        <div>{{a.id}}</div>
+                        <a href="add?id={{a.id}}">edit</a> ||
 					    <a href="add?id={{a.id}}">Deactive</a>
 					</td>
-					<td> {{a.id}} </td>
 					<td> {{a.project_id}} </td>
 					<td> {{a.sub_seris}} </td>
 					<td> {{a.launch_type}} </td>
